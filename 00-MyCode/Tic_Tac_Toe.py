@@ -21,21 +21,27 @@ def draw_board(board):
 def get_user_choice():
     
     valid_choices = ['X','O']
+    player_choices = {}
     choice = None
     
     while choice not in valid_choices:
         os.system( 'cls' )
         choice = input('Player 1: Please enter your choice: ')
-        
-    print(choice)
-    return choice
+    
+    player_choices['P1'] = choice
+    valid_choices.pop(valid_choices.index(choice))
+    player_choices['P2'] = valid_choices.pop()
+    
+    return player_choices
 
 def redraw_board(my_board, value, position):
     my_board[position] = value
     draw_board(my_board)
     
     
-    
+def start_game():
+    poinput
+
 p1_choice = get_user_choice()
 redraw_board(my_board, 'X',2)
 
